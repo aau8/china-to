@@ -47,6 +47,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    @media (max-width: $mobile-l) {
+        font-size: 16px;
+    }
 }
 
 input,

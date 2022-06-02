@@ -14,15 +14,25 @@ burger.addEventListener('click', e => {
     bodyLockToggle()
 })
 
-for (let i = 0; i < menuLinkElems.length; i++) {
-    const link = menuLinkElems[i];
-    
-    link.addEventListener('click', e => {
+window.addEventListener('click', e => {
+    const target = e.target
+
+    if (target.classList.contains('menu') || (target.tagName === 'A' && target.closest('.menu'))) {
         burger.classList.remove('is-active')
         menu.classList.remove('is-show')
         bodyUnlock()
-    })
-}
+    }
+})
+
+// for (let i = 0; i < menuLinkElems.length; i++) {
+//     const link = menuLinkElems[i];
+    
+//     link.addEventListener('click', e => {
+//         burger.classList.remove('is-active')
+//         menu.classList.remove('is-show')
+//         bodyUnlock()
+//     })
+// }
 
 // Стрелка "Наверх"
 // document.querySelector(".back-to-top").addEventListener("click", (e) => {

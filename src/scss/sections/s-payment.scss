@@ -1,0 +1,27 @@
+.s-payment__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    @media (max-width: $tablet) {
+        grid-template-columns: 1fr;
+    }
+
+    @media (max-width: $mobile-l) {
+        gap: 10px;
+    }
+}
+
+// Уведомление
+.s-payment__notif {
+    color: $light;
+    background: $frame-blue-grad;
+    border-radius: $radius;
+    padding: 30px;
+    margin-top: 20px;
+
+    @media (max-width: $mobile-l) {
+        padding: 20px;
+        margin-top: 10px;
+    }
+}

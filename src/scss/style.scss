@@ -13,7 +13,7 @@
 $text-primary: #212121;
 $light: #fff;
 $text-second: brig-color($text-primary, .7);
-$text-accent: #F97900;
+$accent: #F97900;
 $text-link: #2E539A;
 $link-active: brig-color(#FFCD6D, active);
 
@@ -154,6 +154,11 @@ body {
 // Компоненты
 @import "./components/socials";
 
+// Карточки
+@import "./components/cards/c-offer";
+@import "./components/cards/c-services";
+@import "./components/cards/c-payment";
+
 // Базовые стили, шаблоны, заготовки
 @import "./base";
 
@@ -163,6 +168,11 @@ body {
 // Стили частоиспользуемых секций
 @import "./sections/header";
 @import "./sections/main";
+@import "./sections/s-offer";
+@import "./sections/s-addit";
+@import "./sections/s-hw";
+@import "./sections/s-service";
+@import "./sections/s-payment";
 @import "./sections/footer";
 
 

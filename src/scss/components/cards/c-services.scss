@@ -1,0 +1,53 @@
+.c-services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid $border-card;
+    border-radius: $radius;
+    aspect-ratio: 1;
+    transition: $tr;
+
+    @media (any-hover: hover) {
+        
+        &:hover {
+            border-color: $accent;
+        }
+    }
+
+    @media (max-width: 900px) {
+        aspect-ratio: auto;
+    }
+
+    @media (max-width: $tablet) {
+        aspect-ratio: 1;
+    }
+}
+
+.c-services__icon {
+    width: 26%;
+    height: 26%;
+
+    & img,
+    & svg {
+        object-fit: contain;
+    }
+    
+    @media (max-width: $mobile-l) {
+        width: 36%;
+        height: 36%;
+    }
+}
+
+.s-addit__title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+    margin-top: 20px;
+
+    @media (max-width: 450px) {
+        font-size: 13px;
+    }
+}

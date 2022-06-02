@@ -1,0 +1,15 @@
+.s-offer {
+    
+}
+
+.s-offer__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(295px, min-content);
+    gap: 20px;
+
+    @media (max-width: 850px) {
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax(250px, min-content);
+    }
+}

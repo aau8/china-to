@@ -65,6 +65,19 @@
         }
     }
 }
+.btn-linear_light {
+    @include btn;
+    font-weight: 400;
+    color: $light;
+    border: 1px solid $border-light;
+
+    @media (any-hover: hover) {
+        
+        &:hover {
+            border-color: $border-card;
+        }
+    }
+}
 
 .link {
     transition: $tr;
@@ -72,11 +85,11 @@
     @media (any-hover: hover) {
         
         &:hover {
-            color: $text-accent;
+            color: $accent;
         }
     }
 
     &:active {
-        color: brig-color($text-accent, active);
+        color: brig-color($accent, active);
     }
 }

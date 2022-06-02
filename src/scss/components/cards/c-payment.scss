@@ -1,0 +1,47 @@
+:root {
+    --c-payment-padding: 30px;
+
+    @media (max-width: $mobile-l) {
+        --c-payment-padding: 20px;
+    }
+}
+
+
+.c-payment {
+    padding: var(--c-payment-padding);
+    background: $light;
+    border: 1px solid $border-card;
+    border-radius: $radius;
+}
+
+.c-payment__header {
+    display: flex;
+    align-items: center;
+    padding-bottom: var(--c-payment-padding);
+}
+
+.c-payment__icon {
+    width: 60px;
+    height: 40px;
+
+    @media (max-width: $mobile-l) {
+        width: 45px;
+        height: 30px;
+    }
+}
+
+.c-payment__title {
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 30px;
+
+    @media (max-width: $mobile-l) {
+        font-size: 20px;
+        margin-left: 20px;
+    }
+}
+
+.c-payment__body {
+    padding-top: var(--c-payment-padding);
+    border-top: 1px solid $border-card;
+}
