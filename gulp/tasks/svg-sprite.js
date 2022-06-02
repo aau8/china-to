@@ -6,26 +6,26 @@ export default function sprite() {
 		.pipe(svgSprite({
 			mode: {
 				symbol: {
-					sprite: '../img/icons/icons.svg',
+					sprite: '../img/sprite.svg',
 					// example: true
 				}
 			},
 			shape: {
 				id: {
 					separator: '',
-					generator: 'svg-'
+					generator: ''
 				},
-				transform: [
-					{
-						svgo: {
-							plugins: [
-								{ removeXMLNS: true },
-								{ convertPathData: false },
-								{ removeViewBox: false },
-							]
-						}
-					}
-				]
+				// transform: [
+				// 	{
+				// 		svgo: {
+				// 			plugins: [
+				// 				{ removeXMLNS: true },
+				// 				{ convertPathData: false },
+				// 				{ removeViewBox: false },
+				// 			]
+				// 		}
+				// 	}
+				// ]
 			},
 			svg: {
 				rootAttributes: {

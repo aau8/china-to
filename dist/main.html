@@ -5,16 +5,75 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css?_v=20220602132859">
+    <link rel="stylesheet" href="./css/style.min.css?_v=20220602171608">
 </head>
 <body>
 	<div class="wrapper">
         <header class="header">
-    
+    <div class="header-up">
+        <div class="header-up__container">
+            <div class="header-up__contacts">
+                <a href="mailto:info@china.ru" class="header-up__contact header-up__contact_email">info@china.ru</a>
+                <a href="tel:+8618928277860" class="header-up__contact header-up__contact_phone">+86 189 2827 7860</a>
+            </div>
+            <div class="socials header__socials">
+                <span class="socials__title">Пишите нам в чат:</span>
+                <div class="socials__list">
+                    <a href="#" class="socials-item" title="WhatsApp">
+                        <div class="socials-item__icon"><svg><use href='./img/sprite.svg#whatsapp'></use></svg></div>
+                        <span class="socials-item__text">WhatsApp</span>
+                    </a>
+                    <a href="#" class="socials-item" title="Telegram">
+                        <div class="socials-item__icon"><svg><use href='./img/sprite.svg#telegram'></use></svg></div>
+                        <span class="socials-item__text">Telegram</span>
+                    </a>
+                    <a href="#" class="socials-item" title="WeChat">
+                        <div class="socials-item__icon"><svg><use href='./img/sprite.svg#wechat'></use></svg></div>
+                        <span class="socials-item__text">WeChat</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-down">
+        <div class="header-down__container">
+            <a href="#" class="logo header-down__logo"><img src="./img/logo.svg" alt=""></a>
+            <div class="menu">
+                <nav class="menu__wrap">
+                    <ul class="menu__list">
+                        <li><a href="#" class="link">Что мы предлагаем</a></li>
+                        <li><a class="link" href="#">Как это работает</a></li>
+                        <li><a class="link" href="#">Услуги</a></li>
+                        <li><a class="link" href="#">Оплата</a></li>
+                        <li><a class="link" href="#">Стоимость</a></li>
+                        <li><a class="link" href="#">Что нужно знать</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <button class="btn-fill header__cabinet">Личный кабинет</button>
+            <button class="burger header__burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
 </header>
-		<main class="main"></main>
+		<main class="main">
+            <div class="main__container">
+                <div class="main__content">
+                    <h1 class="title-main main__title">Перевозка грузов <br>из Китая в Россию</h1>
+                    <p class="main__text">Зарегистрируйтесь на нашем сайте и автоматически получите адрес склада в Китае, а также индивидуальный код.</p>
+                    <div class="main__buttons">
+                        <button class="btn-fill main__sign-up">Зарегистрироваться</button>
+                        <button class="btn-linear main__how-working">Как это работает</button>
+                    </div>
+                </div>
+                <div class="main__img"><picture><source srcset="./img/boxes-fixed.webp" type="image/webp"><img src="./img/boxes-fixed.png" alt=""></picture></div>
+            </div>
+        </main>
 		<div class="content">
-            
+
         </div>
 
         <footer class="footer">
@@ -26,11 +85,11 @@
     <div class="modal__wrap">
         <div class="modal__window">
             text
-            <button class="modal-close"><img src="./img/sign-in/close.png" alt=""></button>
+            <button class="modal-close"><picture><source srcset="./img/sign-in/close.webp" type="image/webp"><img src="./img/sign-in/close.png" alt=""></picture></button>
         </div>
         <div class="modal__bg"></div>
     </div>
 </div> -->
-    <script src="./js/bundle.min.js?_v=20220602132859"></script>
+    <script src="./js/bundle.min.js?_v=20220602171608"></script>
 </body>
 </html>

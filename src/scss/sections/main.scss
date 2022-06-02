@@ -1,0 +1,78 @@
+.main {
+    background: $frame-dark;
+    padding: 100px 0;
+
+    @media (max-width: $mobile-l) {
+        padding: 50px 0 60px;
+    }
+}
+
+.main__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: $tablet) {
+        flex-direction: column;
+    }
+}
+
+.main__content {
+    max-width: 610px;
+    width: 50%;
+    margin-right: 55px;
+
+    @media (max-width: $tablet) {
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto 60px;
+    }
+}
+
+.main__title {
+
+}
+
+.main__text {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 30px;
+
+    @media (max-width: 820px) {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    @media (max-width: 350px) {
+        font-size: 14px;
+        margin-top: 12px;
+    }
+}
+
+.main__buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: -4px -5px;
+    margin-top: 40px;
+
+    & > * {
+        margin: 4px 5px;
+
+        @media (max-width: 365px) {
+            width: 100%;
+        }
+    }
+}
+
+.main__sign-up {
+
+}
+
+.main__how-working {
+
+}
+
+.main__img {
+
+}

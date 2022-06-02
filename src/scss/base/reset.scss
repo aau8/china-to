@@ -36,10 +36,11 @@ body {
 // Перенести стили с файла style.scss
 body {
     font-family: $ff-main;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
     color: $text-primary;
-    line-height: 1.2;
+    line-height: 1.4;
+    background: $frame-light;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;

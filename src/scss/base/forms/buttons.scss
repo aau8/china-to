@@ -1,21 +1,67 @@
 // Основной шаблон кнопки
-.btn {
-    position: relative;
-    height: 42px;
+@mixin btn {
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 16px;
-    font-weight: 700;
-    padding: 0 20px;
-    border-radius: 4px;
+    line-height: 1.2;
+    padding: 0 40px;
+    border-radius: $radius-round;
     transition: $tr;
     white-space: nowrap;
+    user-select: none;
+    overflow: hidden;
 
-	@media (any-hover: hover) {
+    @media (max-width: $mobile-l) {
+        font-size: 13px;
+        padding: 0 20px;
+    }
+}
+
+// Оранжевая заполненная кнопка
+.btn-fill {
+    @include btn;
+    position: relative;
+    z-index: 1;
+    font-weight: 700;
+    color: $light;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        aspect-ratio: 1;
+        background: $frame-orange-grad;
+        transition: .5s;
+    }
+
+    @media (any-hover: hover) {
         
         &:hover {
-            background: #000;
+            
+            &::before {
+                transform: translate(-50%, -50%) rotate(180deg)
+            }
+        }
+    }
+}
+
+// Кнопка с серой обводкой
+.btn-linear {
+    @include btn;
+    font-weight: 400;
+    color: $text-primary;
+    border: 1px solid $border-frame;
+
+    @media (any-hover: hover) {
+        
+        &:hover {
+            border-color: $text-primary;
         }
     }
 }

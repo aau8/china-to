@@ -1,0 +1,27 @@
+// Заголовки
+// Главный заголовок на странице (h1)
+.title-main {
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    @media (max-width: $laptop) {
+        font-size: 48px;
+    }
+
+    @media (max-width: 900px) {
+        font-size: 44px;
+    }
+
+    @media (max-width: 820px) {
+        font-size: 40px;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 37px;
+    }
+
+    @media (max-width: 355px) {
+        font-size: 30px;
+    }
+}

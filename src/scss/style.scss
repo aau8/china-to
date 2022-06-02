@@ -3,36 +3,45 @@
 // Миксины
 @import "./mixins";
 
+// Шрифты
+@include font('Gilroy', normal, 400, '../resources/fonts/Gilroy/Gilroy-Regular.woff2');
+@include font('Gilroy', normal, 700, '../resources/fonts/Gilroy/Gilroy-Bold.woff2'); 
+
 // Переменные
 // ================ Colors Start ================
 // Текст
-$text-primary: #333;
+$text-primary: #212121;
+$light: #fff;
 $text-second: brig-color($text-primary, .7);
-$text-accent: #FFCD6D;
+$text-accent: #F97900;
+$text-link: #2E539A;
 $link-active: brig-color(#FFCD6D, active);
 
 // Задний фон разделов
-// $frame-dark: #080A0A;
-// $frame-light: #0E1010;
+$frame-dark: #EDF0F4;
+$frame-light: #F7F8FB;
+$frame-blue-grad: linear-gradient(180deg, #2E539A 0%, #3A69C4 100%);
+$frame-orange-grad: linear-gradient(90deg, #F97900 1.17%, #FA9800 100%);
 
 // Обводка
-$border-line: #cecece;
-$input-placeholder: brig-color(#000, .3);
+$border-frame: #CECECE;
+$border-card: #E8E8E8;
+$border-light: rgba(255, 255, 255, 0.2);
 
-$error: #EB5757;
+$error: #E00000;
 
 // Текстовые поля
-$tf-label: $text-second;
-
-// Цвета кнопок в файле 'scss/elements/button.scss'
+$tf-placeholder: #7A7A7A;
+$tf-focus: #212121;
+$tf-disabled: #E8E8E8;
 // ================ Colors End ================
 
 
 // ================ Responsive Start ================
 $min-width: 320px;
 $max-width: 1920px;
-$max-width-container: 1200;
-$container-padding: 24;
+$max-width-container: 1240;
+$container-padding: 48;
 $container-width: $max-width-container + $container-padding;
 
 $laptop-l: 1460px;
@@ -42,12 +51,14 @@ $mobile-l: 430px;
 $mobile-m: 340px;
 $mobile-s: 325px;
 
-$hide-menu: $tablet;
+$hide-menu: 900px;
 // ================ Responsive End ================
 
 
 // ================ Other Start ================
-$ff-main: sans-serif;
+$radius: 10px;
+$radius-round: 99px;
+$ff-main: 'Gilroy', sans-serif; 
 $tr: .3s;
 // ================ Other End ================
 //========================================================================================================================================================
@@ -100,6 +111,10 @@ body {
 		@if ($container-padding>0) {
 			padding: 0 rem(math.div($container-padding, 2));
 		}
+
+        @media (max-width: $mobile-l) {
+            padding: 0 rem(15);
+        }
 	}
 } 
 // @else {
@@ -129,11 +144,15 @@ body {
 // 	}
 // }
 
-// // Элементы
-// @import "./elements/buttons";
+// // Базовые стили
+@import "./base/forms/buttons";
+@import "./base/text";
 // @import "./elements/select";
 // @import "./elements/textfield";
 
+
+// Компоненты
+@import "./components/socials";
 
 // Базовые стили, шаблоны, заготовки
 @import "./base";

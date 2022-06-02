@@ -1,0 +1,57 @@
+// Логотип
+.logo {
+    display: block;
+    height: 100%;
+    aspect-ratio: 1;
+    width: fit-content;
+}
+
+// Бургер
+.burger {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: $frame-dark;
+    border-radius: 50%;
+
+    & span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 40%;
+        height: 2px;
+        display: block;
+        background: $text-primary;
+        transition: $tr;
+
+        &:nth-child(1) {
+            transform: translate(-50%, calc(-50% - 5px));
+        }
+
+        &:nth-child(2) {
+            transform: translate(-50%, -50%);
+        }
+
+        &:nth-child(3) {
+            transform: translate(-50%, calc(-50% + 5px));
+        }
+    }
+
+    &.is-active {
+
+        & span {
+
+            &:nth-child(1) {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+    
+            &:nth-child(2) {
+                width: 0;
+            }
+    
+            &:nth-child(3) {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
+}

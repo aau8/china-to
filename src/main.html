@@ -10,9 +10,21 @@
 <body>
 	<div class="wrapper">
         @@include('html/header.html',{})
-		<main class="main"></main>
+		<main class="main">
+            <div class="main__container">
+                <div class="main__content">
+                    <h1 class="title-main main__title">Перевозка грузов <br>из Китая в Россию</h1>
+                    <p class="main__text">Зарегистрируйтесь на нашем сайте и автоматически получите адрес склада в Китае, а также индивидуальный код.</p>
+                    <div class="main__buttons">
+                        <button class="btn-fill main__sign-up">Зарегистрироваться</button>
+                        <button class="btn-linear main__how-working">Как это работает</button>
+                    </div>
+                </div>
+                <div class="main__img"><img src="@img/boxes-fixed.png" alt=""></div>
+            </div>
+        </main>
 		<div class="content">
-            
+
         </div>
 
         @@include('html/footer.html',{})
