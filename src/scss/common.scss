@@ -13,6 +13,7 @@
     height: 40px;
     background: $frame-dark;
     border-radius: 50%;
+    transition: $tr;
 
     & span {
         position: absolute;
@@ -34,6 +35,21 @@
 
         &:nth-child(3) {
             transform: translate(-50%, calc(-50% + 5px));
+        }
+    }
+
+    &:active {
+        background: brig-color($frame-dark, 1.05);
+    }
+
+    @media (any-hover: hover) {
+        
+        &:hover {
+            background: brig-color($frame-dark, 1.05);
+        }
+
+        &:active {
+            background: $frame-dark;
         }
     }
 
@@ -94,7 +110,7 @@
     font-size: 37px;
     font-weight: 700;
     line-height: 1;
-    margin-right: 30px;
+    // margin-right: 30px;
 
     &::after {
         content: attr(data-s-header-label);
@@ -124,6 +140,5 @@
 }
 
 .s-header__text {
-    font-size: 18px;
     margin-top: 20px;
 }

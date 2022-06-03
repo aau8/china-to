@@ -15,7 +15,7 @@
     align-items: center;
     justify-content: flex-end;
 
-    @media (max-width: 800px) {
+    @media (max-width: 840px) {
         justify-content: space-between;
     }
 }
@@ -35,7 +35,7 @@
         margin-right: 30px;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 840px) {
         font-size: 16px;
 
         &:not(:last-child) {
@@ -43,14 +43,14 @@
         }
     }
 
-    @media (max-width: $mobile-l) {
+    @media (max-width: 470px) {
         font-size: 13px;
     }
 
     @media (max-width: 340px) {
 
         &:not(:last-child) {
-            margin-right: 8px;
+            margin-right: 6px;
         }
     }
 }
@@ -134,11 +134,13 @@
         margin: 0;
         pointer-events: none;
         transition: background-color $tr;
+        visibility: hidden;
 
         &.is-show {
             pointer-events: fill;
             background: create-rgba($frame-light, .9);
             border-top-color: $border-card;
+            visibility: visible;
 
             & .menu__wrap {
                 transform: translate(0, 0);

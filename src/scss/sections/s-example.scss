@@ -1,0 +1,31 @@
+.s-example__body {
+    display: flex;
+    background: $light;
+    border: 1px solid $border-card;
+    border-radius: $radius;
+    padding: 30px;
+
+    @media (max-width: $mobile-l) {
+        padding: 20px;
+    }
+}
+
+.s-example__icon {
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+
+    @media (max-width: $mobile-l) {
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.s-example__content {
+    margin: auto 0 auto 30px;
+
+    @media (max-width: $mobile-l) {
+        margin-left: 20px;
+    }
+}

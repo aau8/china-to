@@ -3,7 +3,11 @@
     height: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px
+    gap: 20px;
+
+    @media (max-width: $mobile-l) {
+        gap: 10px;
+    }
 }
 
 .acc {
@@ -51,6 +55,17 @@
                 color: $accent;
             }
         }
+
+        &:active {
+            
+            & .acc__toggle-title {
+                color: brig-color($accent, .9);
+            }
+        }
+    }
+
+    @media (max-width: $mobile-l) {
+        padding: 20px;
     }
 }
 
@@ -59,6 +74,12 @@
     width: 50px;
     height: 50px;
     pointer-events: none;
+
+    @media (max-width: $mobile-l) {
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+    }
 }
 
 .acc__toggle-title {
@@ -67,6 +88,19 @@
     pointer-events: none;
     transition: $tr;
     margin: 0 16px 0 30px;
+
+    @media (max-width: $mobile-l) {
+        font-size: 20px;
+        margin-left: 20px;
+    }
+
+    @media (max-width: 360px) {
+        font-size: 18px;
+    }
+
+    @media (max-width: 330px) {
+        font-size: 16px;
+    }
 }
 
 .acc__toggle-plus {
@@ -98,6 +132,12 @@
             transform: translate(-50%, -50%) rotate(90deg);
         }
     }
+
+    @media (max-width: $mobile-l) {
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+    }
 }
 
 // Тело аккордеона
@@ -113,4 +153,9 @@
     padding: 30px 0;
     margin: 0 30px;
     border-top: 1px solid $border-card;
+
+    @media (max-width: $mobile-l) {
+        padding: 20px 0;
+        margin: 0 20px;
+    }
 }

@@ -9,10 +9,19 @@
     aspect-ratio: 1;
     transition: $tr;
 
+    &:active {
+        border-color: $accent;
+        background: brig-color($accent, .51);
+    }
+
     @media (any-hover: hover) {
         
         &:hover {
             border-color: $accent;
+        }
+
+        &:active {
+            background: brig-color($accent, .51);
         }
     }
 

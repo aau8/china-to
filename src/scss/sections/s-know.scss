@@ -1,0 +1,72 @@
+.s-know__body {
+    counter-reset: counterKnow;
+    background: $light;
+    border: 1px solid $border-card;
+    border-radius: $radius;
+    padding: 0 30px;
+
+    @media (max-width: $mobile-l) {
+        padding: 0 20px;
+    }
+}
+
+.sk-block {
+    list-style-type: none;
+    padding: 30px 0;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid $border-card;
+    }
+
+    @media (max-width: $mobile-l) {
+        padding: 20px 0;
+    }
+}
+
+.sk-block__title {
+    display: flex;
+
+    &::before {
+        content: counter(counterKnow);
+        counter-increment: counterKnow;
+        min-width: 50px;
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        font-weight: 700;
+        color: $light;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: $frame-orange-grad;
+        margin-right: 30px;
+
+        @media (max-width: $mobile-l) {
+            min-width: 40px;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            margin-right: 20px;
+        }
+    }
+}
+
+.sk-block__title-text {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1;
+    margin: auto 0;
+
+    @media (max-width: $tablet) {
+        font-size: 23px;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 20px;
+    }
+}
+
+.sk-block__content {
+    margin-top: 30px;
+}

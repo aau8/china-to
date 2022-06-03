@@ -71,6 +71,10 @@ $responsive-type: 1;
 // Сброс CSS
 @import "./base/reset";
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
 
     ._lock & {
@@ -146,9 +150,9 @@ body {
 
 // // Базовые стили
 @import "./base/forms/buttons";
+@import "./base/forms/textfield";
 @import "./base/text";
 // @import "./elements/select";
-// @import "./elements/textfield";
 
 
 // Компоненты
@@ -158,6 +162,7 @@ body {
 @import "./components/cards/c-offer";
 @import "./components/cards/c-services";
 @import "./components/cards/c-payment";
+@import "./components/cards/c-amount";
 
 // Базовые стили, шаблоны, заготовки
 @import "./base";
@@ -173,6 +178,10 @@ body {
 @import "./sections/s-hw";
 @import "./sections/s-service";
 @import "./sections/s-payment";
+@import "./sections/s-amount";
+@import "./sections/s-insur";
+@import "./sections/s-know";
+@import "./sections/s-example";
 @import "./sections/footer";
 
 

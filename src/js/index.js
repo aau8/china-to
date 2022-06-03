@@ -24,15 +24,14 @@ window.addEventListener('click', e => {
     }
 })
 
-// for (let i = 0; i < menuLinkElems.length; i++) {
-//     const link = menuLinkElems[i];
-    
-//     link.addEventListener('click', e => {
-//         burger.classList.remove('is-active')
-//         menu.classList.remove('is-show')
-//         bodyUnlock()
-//     })
-// }
+burger.addEventListener('click', e => {
+    console.log(e)
+})
+
+sayHi()
+function sayHi() {
+    console.log(this)
+}
 
 // Стрелка "Наверх"
 // document.querySelector(".back-to-top").addEventListener("click", (e) => {

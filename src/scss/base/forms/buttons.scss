@@ -45,8 +45,15 @@
         &:hover {
             
             &::before {
-                transform: translate(-50%, -50%) rotate(180deg)
+                transform: translate(-50%, -50%) rotate(180deg);
             }
+        }
+    }
+
+    &:active {
+        
+        &::before {
+            transform: translate(-50%, -50%) rotate(180deg) scale(2);
         }
     }
 }
@@ -64,6 +71,10 @@
             border-color: $text-primary;
         }
     }
+
+    &:active {
+        border-color: brig-color($text-primary, .5);
+    }
 }
 .btn-linear_light {
     @include btn;
@@ -71,10 +82,22 @@
     color: $light;
     border: 1px solid $border-light;
 
+    &:active {
+        background: create-rgba($light, .2);
+        border-color: create-rgba($light, .2);
+    }
+
     @media (any-hover: hover) {
         
         &:hover {
-            border-color: $border-card;
+            color: $text-primary;
+            background: $light;
+            border-color: $light;
+        }
+
+        &:active {
+            background: create-rgba($light, .8);
+            border-color: create-rgba($light, .8);
         }
     }
 }
@@ -91,5 +114,20 @@
 
     &:active {
         color: brig-color($accent, active);
+    }
+}
+
+.link_light {
+    transition: $tr;
+
+    @media (any-hover: hover) {
+        
+        &:hover {
+            opacity: .6;
+        }
+    }
+
+    &:active {
+        opacity: .8;
     }
 }
