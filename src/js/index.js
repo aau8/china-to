@@ -1,11 +1,16 @@
 import { find, findAll, removeAllClasses, bodyLockToggle, bodyUnlock } from "./utils/functions.js";
+import SmoothScroll from "smooth-scroll";
 import "./render.js";
 // import "./menu.js";
 import "./modals.js";
 
+new SmoothScroll('a[href*="#"]', {
+	speed: 300,
+    offset: 50,
+});
+
 // Меню
 const menu = document.querySelector('.menu')
-const menuLinkElems = menu.querySelectorAll('a')
 const burger = document.querySelector('.header__burger')
 
 burger.addEventListener('click', e => {
@@ -24,13 +29,52 @@ window.addEventListener('click', e => {
     }
 })
 
-burger.addEventListener('click', e => {
-    console.log(e)
+// Калькулятор
+const tf = document.querySelector('.s-insur-tf input')
+const percent = document.querySelector('.s-insur__percent span')
+let lastValue
+
+tf.addEventListener('input', e => {
+    let tfValue = parseFloat(tf.value)
+    
+    if (tfValue <= 30 || tf.value === '') {
+        percent.innerText = '2%'
+    }
+    else if (tfValue > 30 && tfValue <= 50) {
+        percent.innerText = '3%'
+    }
+    else {
+        percent.innerText = '4%'
+    }
 })
 
-sayHi()
-function sayHi() {
-    console.log(this)
+tf.addEventListener('focus', e => {
+    lastValue = tf.value
+})
+
+tf.addEventListener('blur', e => {
+    if (tf.value === '') {
+        tf.value = lastValue
+    }
+})
+
+// Только цифры и точка в инпуте
+const inputDigitElems = document.querySelectorAll('[data-only-digits]')
+
+for (let i = 0; i < inputDigitElems.length; i++) {
+    const input = inputDigitElems[i];
+    
+    input.addEventListener('keypress', e => {
+        if (e.key.search(/[\d\.]/)) {
+            e.preventDefault()
+        }
+    })
+
+    input.addEventListener('paste', e => {
+        if (e.clipboardData.getData('text/plain').search(/[\d\.]/)) {
+            e.preventDefault()
+        }
+    })
 }
 
 // Стрелка "Наверх"

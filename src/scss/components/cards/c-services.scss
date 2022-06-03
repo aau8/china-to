@@ -9,6 +9,10 @@
     aspect-ratio: 1;
     transition: $tr;
 
+    & > * {
+        pointer-events: none;
+    }
+
     &:active {
         border-color: $accent;
         background: brig-color($accent, .51);

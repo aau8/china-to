@@ -38,14 +38,14 @@
                         <div class="c-offer c-offer_blue">
                             <div class="c-offer__content">
                                 <span class="c-offer__title">Вы покупаете – мы перевозим из Китая в Россию</span>
-                                <a href="#" class="btn-linear_light c-offer__more">Подробнее</a>
+                                <a href="#how-work" class="btn-linear_light c-offer__more">Подробнее</a>
                             </div>
                             <div class="c-offer__img"><img src="@img/offer/transit.png" alt=""></div>
                         </div>
                         <div class="c-offer c-offer_orange">
                             <div class="c-offer__content">
                                 <span class="c-offer__title">Вы покупаете – мы перевозим из Китая в Россию</span>
-                                <a href="#" class="btn-linear_light c-offer__more">Подробнее</a>
+                                <a href="#service" class="btn-linear_light c-offer__more" data-acc-open="purchase-of-goods">Подробнее</a>
                             </div>
                             <div class="c-offer__img"><img src="@img/offer/pay-delivery.png" alt=""></div>
                         </div>
@@ -66,11 +66,11 @@
                             <div class="c-services__icon"><img src="@img/icons/search.svg" alt=""></div>
                             <span class="s-addit__title">Поиск поставщиков</span>
                         </a>
-                        <a href="#" class="c-services">
+                        <a href="#service" class="c-services" data-acc-open="search-for-suppliers">
                             <div class="c-services__icon"><img src="@img/icons/insurance.svg" alt=""></div>
                             <span class="s-addit__title">Закуп товаров</span>
                         </a>
-                        <a href="#" class="c-services">
+                        <a href="#insur" class="c-services">
                             <div class="c-services__icon"><img src="@img/icons/truck.svg" alt=""></div>
                             <span class="s-addit__title">Страхование груза</span>
                         </a>
@@ -88,7 +88,7 @@
                                 <span class="text s-hw__item-text">После того как Вы зарегистрировались на нашем сайте, автоматически получили адрес склада в Китае и индивидуальный код, можете сразу делать онлайн покупки и отправлять на наш адрес (Донггуан, провинция Гуандун). Или передать адрес склада поставщику и попросить отправить груз на данный адрес.</span>
                             </li>
                             <li class="s-hw__item">
-                                <span class="text s-hw__item-text">После получения Вашего груза на складе, мы, при необходимости, делаем <a href="#">дополнительную упаковку</a> и отправляем Вам информацию о весе и объеме груза, о стоимости перевозки и, при желании, о <a href="#">страховании груза</a>.</span>
+                                <span class="text s-hw__item-text">После получения Вашего груза на складе, мы, при необходимости, делаем <a href="#amount">дополнительную упаковку</a> и отправляем Вам информацию о весе и объеме груза, о стоимости перевозки и, при желании, о <a href="#amount">страховании груза</a>.</span>
                             </li>
                             <li class="s-hw__item">
                                 <span class="text s-hw__item-text">Груз будет отправлен после Вашего подтверждения.</span>
@@ -113,7 +113,7 @@
                         <h2 class="s-header__title">Услуги</h2>
                     </div>
                     <div class="s-service__body acc-list" data-acc-hidden-sibling>
-                        <div class="acc">
+                        <div class="acc" data-acc-id="cargo-packing">
                             <button class="acc__toggle" data-acc-toggle>
                                 <div class="acc__toggle-icon"><img src="@img/icons/box.svg" alt=""></div>
                                 <span class="acc__toggle-title">Упаковка груза</span>
@@ -128,7 +128,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="acc">
+                        <div class="acc" data-acc-id="search-for-suppliers">
                             <button class="acc__toggle" data-acc-toggle>
                                 <div class="acc__toggle-icon"><img src="@img/icons/search.svg" alt=""></div>
                                 <span class="acc__toggle-title">Поиск поставщиков</span>
@@ -147,7 +147,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="acc">
+                        <div class="acc" data-acc-id="purchase-of-goods">
                             <button class="acc__toggle" data-acc-toggle>
                                 <div class="acc__toggle-icon"><img src="@img/icons/insurance.svg" alt=""></div>
                                 <span class="acc__toggle-title">Выкуп товаров из китайских сайтов в розницу и оптом</span>
@@ -323,7 +323,7 @@
                         <div class="s-insur__amount">
                             <span class="s-insur__amount-text">Стоимость груза за 1кг:</span>
                             <label class="tf s-insur-tf">
-                                <input type="text" value="18">
+                                <input type="text" value="18" data-only-digits>
                                 <span class="s-insur-tf__label">USD</span>
                             </label>
                             <!-- <label class="tf" data-required data-only-letters>

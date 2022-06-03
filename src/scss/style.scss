@@ -72,7 +72,7 @@ $responsive-type: 1;
 @import "./base/reset";
 
 html {
-    scroll-behavior: smooth;
+    // scroll-behavior: smooth;
 }
 
 body {
@@ -157,6 +157,7 @@ body {
 
 // Компоненты
 @import "./components/socials";
+@import "./components/social-fixed";
 
 // Карточки
 @import "./components/cards/c-offer";

@@ -27,7 +27,7 @@ function labelTextfield() {
 }
 
 // Списки выбора
-select()
+// select()
 function select() {
     // Проверяем есть ли выбранные элементы при загрузке страницы. Если есть, то селект заполняется
     const selectedItemElems = document.querySelectorAll('.select-dropdown__item._selected')

@@ -1,0 +1,84 @@
+.social-fixed {
+    position: fixed;
+    z-index: 1;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (max-width: $tablet) {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    @media (max-width: 600px) {
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        flex-direction: row;
+    }
+}
+
+.social-fixed__link {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: $tr;
+
+    &_whatsapp {
+        background: #4DAA29;
+    }
+
+    &_telegram {
+        background: #3AA3E1;
+    }
+
+    &_wechat {
+        background: #39BC1B;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 10px;
+
+        @media (max-width: 600px) {
+            margin-bottom: 0;
+        }
+    }
+
+    @media (any-hover: hover) and (min-width: 601px) {
+        
+        &:hover {
+            transform: scale(1.08);
+        }
+    }
+
+    @media (max-width: 600px) {
+        width: 100%;
+        border-radius: 0;
+    }
+}
+
+.social-fixed__icon {
+    width: 26px;
+    height: 26px;
+
+    @media (max-width: 600px) {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.social-fixed__text {
+    display: none;
+
+    @media (max-width: 600px) {
+        display: inline-block;
+        font-size: 13px;
+        color: $light;
+        margin-left: 8px;
+    }
+}

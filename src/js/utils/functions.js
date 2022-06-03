@@ -105,34 +105,38 @@ acc()
 // data-acc-toggle - кнопка при клике по которой показывается/скрывается тело аккордеона
 // data-acc-body - тело аккордеона
 // data-acc-hidden-sibling - аккордеоны будут скрываться при выборе других аккордеонов. !Атрибут указывается у контейнера (acc-list), в котором находятся аккордеоны
+// data-acc-open="<acc-id>" - указывать у элемента, при клике по которому будет открываться указанный аккордеон (в паре обязательно использовать data-acc-id)
+// data-acc-id="<acc-id>" - указывать у аккордеона, если планируется использовать data-acc-open. А так, необязательно
 export function acc() {
+    window.addEventListener("click", accDo)
     
-    window.addEventListener("click", (e) => {
-
-        if (e.target.getAttribute('data-acc-toggle') || e.target.closest('[data-acc-toggle]')) {
-            const accToggle = e.target
+    function accDo(e) {
+        const dataAccOpen = e.target.getAttribute('data-acc-open')
+        console.log(dataAccOpen)
+        if (e.target.getAttribute('data-acc-toggle') || e.target.closest('[data-acc-toggle]') || (dataAccOpen != null || e.target.closest('[data-acc-open]'))) {
+            const accToggle = dataAccOpen != null ? document.querySelector(`[data-acc-id=${dataAccOpen}] [data-acc-toggle]`) : e.target
             const accContainer = !accToggle.closest("[data-acc-body]") ? accToggle.parentElement.parentElement : accToggle.closest("[data-acc-body]")
             const accElem = accToggle.parentElement
             const accBody = accToggle.nextElementSibling
-    
-            accElem.classList.toggle("acc_show")
-    
+        
             if (accBody.style.maxHeight) {
                 accBody.style.maxHeight = null
-                accElem.classList.remove("acc_show")
+                accElem.classList.remove("is-show")
             } else {
                 const adjacentElems = getSiblings(accElem)
                 const accHiddenSibling = accContainer.dataset.accHiddenSibling
     
+                accElem.classList.add("is-show")
+    
                 if (accHiddenSibling != undefined && accHiddenSibling != 'false') {
-
+    
                     for (let i = 0; i < adjacentElems.length; i++) {
                         const elem = adjacentElems[i]
                         const elemHeader = elem.querySelector("[data-acc-toggle]")
                         const elemBody = elem.querySelector("[data-acc-body]")
     
-                        elem.classList.remove("acc_show")
-                        elemHeader.classList.remove("acc_show")
+                        elem.classList.remove("is-show")
+                        elemHeader.classList.remove("is-show")
                         elemBody.style.maxHeight = null
                     }
                 }
@@ -141,7 +145,7 @@ export function acc() {
                 accContainer.style.maxHeight = parseInt(accContainer.scrollHeight) + accBody.scrollHeight + "px"
             }
         }
-    })
+    }
 }
 //========================================================================================================================================================
 
