@@ -165,11 +165,14 @@ body {
 @import "./components/cards/c-payment";
 @import "./components/cards/c-amount";
 
-// Базовые стили, шаблоны, заготовки
-@import "./base";
+// Модалки
+@import "./components/modals/cabinet";
 
 // Общие стили проекта
 @import "./common";
+
+// Базовые стили, шаблоны, заготовки
+@import "./base";
 
 // Стили частоиспользуемых секций
 @import "./sections/header";
@@ -187,5 +190,6 @@ body {
 
 
 // Стили для отдельных страниц
+@import "./pages/account";
 
 // INFO: Тестовые стили. Все что ниже нужно удалить в новом проекте

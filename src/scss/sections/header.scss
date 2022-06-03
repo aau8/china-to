@@ -80,6 +80,8 @@
 .header-down {
     position: relative;
     height: var(--header-down-height);
+    background: $light;
+    border-bottom: 1px solid $border-card;
 
     @media (max-width: $max-width-container + px) {
         --header-down-height: 90px;

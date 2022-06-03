@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+	<div class="wrapper">
+        <header class="header">
+            <div class="header-up">
+                <div class="header-up__container">
+                    <div class="header-up__contacts">
+                        <a href="mailto:info@china.ru" class="link_light header-up__contact header-up__contact_email">info@china.ru</a>
+                        <a href="tel:+8618928277860" class="link_light header-up__contact header-up__contact_phone">+86 189 2827 7860</a>
+                    </div>
+                    <div class="socials header__socials">
+                        <span class="socials__title">Пишите нам в чат:</span>
+                        <div class="socials__list">
+                            <a href="#" class="link_light socials-item" title="WhatsApp">
+                                <div class="socials-item__icon"><svg><use href='./img/sprite.svg#whatsapp'></use></svg></div>
+                                <span class="socials-item__text">WhatsApp</span>
+                            </a>
+                            <a href="#" class="link_light socials-item" title="Telegram">
+                                <div class="socials-item__icon"><svg><use href='./img/sprite.svg#telegram'></use></svg></div>
+                                <span class="socials-item__text">Telegram</span>
+                            </a>
+                            <a href="#" class="link_light socials-item" title="WeChat">
+                                <div class="socials-item__icon"><svg><use href='./img/sprite.svg#wechat'></use></svg></div>
+                                <span class="socials-item__text">WeChat</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-down">
+                <div class="header-down__container">
+                    <a href="#" class="logo header-down__logo"><img src="@img/logo.svg" alt=""></a>
+                    <span class="client-code">Код клиента: <span>MA1506</span></span>
+                    <button class="btn-linear log-out">Выход</button>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <div class="s-account">
+                <div class="s-account__container">
+                    <div class="s-account__info">
+                        <div class="account-block">
+                            <h2 class="account-block__title">Персональные данные</h2>
+                            <ul class="account-block__list">
+                                <li class="account-block__item">Имя: <span>Иван</span></li>
+                                <li class="account-block__item">Фамилия: <span>Иванов</span></li>
+                                <li class="account-block__item">Телефон: <span>+7 123 456-78-90</span></li>
+                                <li class="account-block__item">Email: <span>ivan_ivanov@gmail.com</span></li>
+                                <li class="account-block__item">Ваш персональный код: <span>MA1506</span></li>
+                            </ul>
+                        </div>
+                        <div class="account-block">
+                            <h2 class="account-block__title">Дополнительная информация</h2>
+                            <ul class="account-block__list">
+                                <li class="account-block__item">Telegram: <span>+7 123 456-78-90</span></li>
+                                <li class="account-block__item">WhatsApp: <span>+7 123 456-78-90</span></li>
+                                <li class="account-block__item">WeChat: <span>нет</span></li>
+                            </ul>
+                        </div>
+                        <div class="account-block">
+                            <h2 class="account-block__title" data-account-block-subtitle="Данная информация указывается при покупке в маркетплэйсе">Адрес склада в Китае</h2>
+                            <ul class="account-block__list">
+                                <li class="account-block__item">Провинция: <span>广东省</span></li>
+                                <li class="account-block__item">Город:<span>东莞市</span></li>
+                                <li class="account-block__item">Адрес:<span>东城街道主山振兴路48号1栋104室</span></li>
+                                <li class="account-block__item">Телефон:<span>+86 189 2827 7860</span></li>
+                                <li class="account-block__item">Код клиента (Shipping mark):<span>MA1506</span></li>
+                                <li class="account-block__item">Имя:<span>MA1506 Иван Иванов</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="s-account__work-time">Рабочие дни склада: Понедельник&nbsp;-&nbsp;Суббота, 09:00&nbsp;-&nbsp;17:30</p>
+                    <div class="account-block account-block_black-list">
+                        <h2 class="account-block__title">Список товаров, которые не можем отправить:</h2>
+                        <div class="account-block__content">
+                            <p>
+                                Garnier, L'Oreal, Yves Saint Laurent, Maybelline, NYX, Matrix, Redken, Kerastase, La Roche-Posay, Lancome, Vichy, Skinceuticals, Cerave, Lancome, Giorgio Armani, Yves Saint Laurent, Kiehl's, Valentine, Prada, Helena Rubinstein и другие, шампуни Pantene, Head and Shoulders, Herbal Essences, Garnier, Vichy и других, зубные пасты Oral-B и Blend-a-Med, дезодоранты и средства для бритья и ванн Gillette, Old Spice и так далее.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @@include('html/footer.html',{})
+	</div>
+
+    @@include('html/modals.html', {})
+    <script src="./js/bundle.min.js"></script>
+</body>
+</html>

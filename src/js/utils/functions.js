@@ -112,7 +112,7 @@ export function acc() {
     
     function accDo(e) {
         const dataAccOpen = e.target.getAttribute('data-acc-open')
-        console.log(dataAccOpen)
+
         if (e.target.getAttribute('data-acc-toggle') || e.target.closest('[data-acc-toggle]') || (dataAccOpen != null || e.target.closest('[data-acc-open]'))) {
             const accToggle = dataAccOpen != null ? document.querySelector(`[data-acc-id=${dataAccOpen}] [data-acc-toggle]`) : e.target
             const accContainer = !accToggle.closest("[data-acc-body]") ? accToggle.parentElement.parentElement : accToggle.closest("[data-acc-body]")
@@ -148,6 +148,54 @@ export function acc() {
     }
 }
 //========================================================================================================================================================
+
+// Табы
+tabs()
+function tabs() {
+    const tabElems = document.querySelectorAll('[data-tab]')
+
+    for (let i = 0; i < tabElems.length; i++) {
+        const tab = tabElems[i];
+        const btnElems = tab.querySelectorAll('[data-tab-btn]')
+        const allCards = tab.querySelectorAll('[data-tab-card]')
+    
+        for (let i = 0; i < btnElems.length; i++) {
+            const btn = btnElems[i];
+
+            btn.addEventListener('click', e => {
+                const btnData = btn.dataset.tabBtn
+                const cardElems = tab.querySelectorAll(`[data-tab-card=${btnData}]`)
+
+                removeAllClasses(btnElems, 'is-active')
+                removeAllClasses(allCards, '_show')
+
+                btn.classList.add('is-active')
+                // tabRoller()
+
+                if (btnData === 'all') {
+                    for (let i = 0; i < allCards.length; i++) {
+                        const card = allCards[i];
+                        
+                        card.classList.add('_show')
+                    }
+                }
+                else {
+                    for (let i = 0; i < cardElems.length; i++) {
+                        const card = cardElems[i];
+                        
+                        card.classList.add('_show')
+                    }
+                }
+            })
+        }
+    }
+
+    // window.addEventListener('resize', e => {
+    //     tabRoller()
+    // })
+}
+//========================================================================================================================================================
+
 
 // Вспомогательные модули блокировки прокрутки и резкого сдвига
 export let bodyLockStatus = true;

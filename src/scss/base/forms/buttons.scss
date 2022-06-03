@@ -102,6 +102,47 @@
     }
 }
 
+.btn-submit {
+    @include btn;
+    position: relative;
+    height: 60px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    color: $light;
+    border-radius: 5px;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        aspect-ratio: 1;
+        background: $frame-orange-grad;
+        transition: .5s;
+    }
+
+    @media (any-hover: hover) {
+        
+        &:hover {
+            
+            &::before {
+                transform: translate(-50%, -50%) rotate(180deg);
+            }
+        }
+    }
+
+    &:active {
+        
+        &::before {
+            transform: translate(-50%, -50%) rotate(180deg) scale(2);
+        }
+    }
+}
+
 .link {
     transition: $tr;
 
