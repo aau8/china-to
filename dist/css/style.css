@@ -1404,7 +1404,7 @@ h6 {
 
 .s-insur__container {
   border-bottom: 1px solid #CECECE;
-  padding-bottom: 60px;
+  padding-bottom: 60px !important;
 }
 
 .s-insur__body {
@@ -1740,7 +1740,7 @@ h6 {
   }
 
   .footer-up__container {
-    padding-left: 0;
+    padding-left: 0 !important;
   }
 }
 
@@ -2176,7 +2176,7 @@ h6 {
 
   .tf input,
   .tf textarea {
-    font-size: 15px;
+    --tf-height: 50px;
   }
 
   .tf .tf__label {
@@ -2337,6 +2337,10 @@ h6 {
     margin-top: 10px;
   }
 
+  .s-insur__amount-text {
+    max-width: 110px;
+  }
+
   .s-insur-tf {
     width: 140px;
     margin-left: 10px;
@@ -2439,7 +2443,7 @@ h6 {
   }
 
   .footer-up__contact_phone {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .client-code span {

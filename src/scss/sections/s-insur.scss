@@ -4,7 +4,7 @@
 
 .s-insur__container {
     border-bottom: 1px solid $border-frame;
-    padding-bottom: 60px;
+    padding-bottom: 60px !important;
 }
 
 .s-insur__body {
@@ -25,6 +25,9 @@
 
 .s-insur__amount-text {
 
+    @media (max-width: $mobile-l) {
+        max-width: 110px;
+    }
 }
 
 .s-insur-tf {
