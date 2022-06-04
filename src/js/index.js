@@ -37,19 +37,7 @@ const percent = document.querySelector('.s-insur__percent span')
 let lastValue
 
 if (tf) {
-    tf.addEventListener('input', e => {
-        let tfValue = parseFloat(tf.value)
-        
-        if (tfValue <= 30 || tf.value === '') {
-            percent.innerText = '2%'
-        }
-        else if (tfValue > 30 && tfValue <= 50) {
-            percent.innerText = '3%'
-        }
-        else {
-            percent.innerText = '4%'
-        }
-    })
+    tf.addEventListener('input', calcInsur)
     
     tf.addEventListener('focus', e => {
         lastValue = tf.value
@@ -60,6 +48,20 @@ if (tf) {
             tf.value = lastValue
         }
     })
+}
+
+function calcInsur() {
+    let tfValue = parseFloat(tf.value)
+    
+    if (tfValue <= 30 || tf.value === '') {
+        percent.innerText = '2%'
+    }
+    else if (tfValue > 30 && tfValue <= 50) {
+        percent.innerText = '3%'
+    }
+    else {
+        percent.innerText = '4%'
+    }
 }
 
 // Только цифры и точка в инпуте
@@ -79,6 +81,68 @@ for (let i = 0; i < inputDigitElems.length; i++) {
             e.preventDefault()
         }
     })
+
+    input.addEventListener('keydown', function(e) {
+        
+        if (e.keyCode === 13) {
+            input.blur()
+        }
+    
+        if (e.code === 'ArrowUp' || e.code === 'ArrowDown') {
+            e.preventDefault()
+    
+            const minValue = parseInt(input.getAttribute('min'))
+            const maxValue = parseInt(input.getAttribute('max'))
+            const value = parseInt(input.value)
+            const step = parseInt(input.step)
+    
+            let incr = isNaN(step) ? 1 : step
+            if (e.shiftKey) incr = isNaN(step) ? 10 : step * 10
+    
+            if (e.code === 'ArrowUp') {
+                const sumValue = value + incr
+                
+                if (sumValue >= maxValue) {
+                    input.value = maxValue
+                }
+                else if (sumValue <= minValue) {
+                    input.value = minValue
+                }
+                else {
+                    input.value = sumValue
+                }
+                
+                if (isNaN(value)) input.value = parseInt(input.getAttribute('value')) + 1
+            }
+    
+            if (e.code === 'ArrowDown') {
+                const sumValue = value - incr
+                
+                if (sumValue >= maxValue) {
+                    input.value = maxValue
+                }
+                else if (sumValue <= minValue) {
+                    input.value = minValue
+                }
+                else {
+                    input.value = sumValue
+                }
+                
+                if (isNaN(value)) input.value = parseInt(input.getAttribute('value')) - 1
+            }
+            this.select()
+            setValueInput([input])
+            calcInsur()
+        }
+    })
+}
+
+// Изменение атрибута value
+function setValueInput(selectors, value) {
+    for (let i = 0; i < selectors.length; i++) {
+        const input = selectors[i];
+        input.setAttribute('value', value == undefined ? parseInt(input.value) : parseInt(value))
+    }
 }
 
 // Фиксация нижней части шапки при скролле
