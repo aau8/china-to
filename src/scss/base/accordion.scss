@@ -122,6 +122,7 @@
         width: 40%;
         height: 2px;
         background: $text-primary;
+        border-radius: 10px;
         transition: $tr;
 
         &:nth-child(1) {

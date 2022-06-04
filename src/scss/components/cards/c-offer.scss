@@ -5,7 +5,7 @@
     padding: 30px;
 
     &_blue {
-        background: $frame-blue-grad;
+        background: linear-gradient(-90deg, #2E539A 0%, #3A69C4 100%);
     }
 
     &_orange {

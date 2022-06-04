@@ -6,18 +6,20 @@ import "./modals.js";
 
 new SmoothScroll('a[href*="#"]', {
 	speed: 300,
-    offset: 50,
+    offset: e => document.querySelector('.header-down').clientHeight + 20,
 });
 
 // Меню
 const menu = document.querySelector('.menu')
 const burger = document.querySelector('.header__burger')
 
-burger.addEventListener('click', e => {
-    burger.classList.toggle('is-active')
-    menu.classList.toggle('is-show')
-    bodyLockToggle()
-})
+if (burger) {
+    burger.addEventListener('click', e => {
+        burger.classList.toggle('is-active')
+        menu.classList.toggle('is-show')
+        bodyLockToggle()
+    })
+}
 
 window.addEventListener('click', e => {
     const target = e.target
@@ -34,29 +36,31 @@ const tf = document.querySelector('.s-insur-tf input')
 const percent = document.querySelector('.s-insur__percent span')
 let lastValue
 
-tf.addEventListener('input', e => {
-    let tfValue = parseFloat(tf.value)
+if (tf) {
+    tf.addEventListener('input', e => {
+        let tfValue = parseFloat(tf.value)
+        
+        if (tfValue <= 30 || tf.value === '') {
+            percent.innerText = '2%'
+        }
+        else if (tfValue > 30 && tfValue <= 50) {
+            percent.innerText = '3%'
+        }
+        else {
+            percent.innerText = '4%'
+        }
+    })
     
-    if (tfValue <= 30 || tf.value === '') {
-        percent.innerText = '2%'
-    }
-    else if (tfValue > 30 && tfValue <= 50) {
-        percent.innerText = '3%'
-    }
-    else {
-        percent.innerText = '4%'
-    }
-})
-
-tf.addEventListener('focus', e => {
-    lastValue = tf.value
-})
-
-tf.addEventListener('blur', e => {
-    if (tf.value === '') {
-        tf.value = lastValue
-    }
-})
+    tf.addEventListener('focus', e => {
+        lastValue = tf.value
+    })
+    
+    tf.addEventListener('blur', e => {
+        if (tf.value === '') {
+            tf.value = lastValue
+        }
+    })
+}
 
 // Только цифры и точка в инпуте
 const inputDigitElems = document.querySelectorAll('[data-only-digits]')
@@ -75,6 +79,53 @@ for (let i = 0; i < inputDigitElems.length; i++) {
             e.preventDefault()
         }
     })
+}
+
+// Фиксация нижней части шапки при скролле
+const header = document.querySelector('.header')
+const headerDown = header.querySelector('.header-down')
+const headerUp = header.querySelector('.header-up')
+const headerUpHeight = headerUp.clientHeight
+
+window.addEventListener('scroll', fixHeaderDown)
+
+fixHeaderDown()
+function fixHeaderDown() {
+    const windowPageY = window.scrollY
+    
+    if (windowPageY > headerUpHeight) {
+        headerDown.classList.add('is-fixed')
+        header.style.paddingBottom = headerDown.clientHeight + 'px'
+    }
+    else {
+        headerDown.classList.remove('is-fixed')
+        header.style.paddingBottom = 0
+    }
+}
+
+// Фиксация кнопки "Отправьте нам сообщение" над подвалом
+const footer = document.querySelector('.footer')
+const socialFixed = document.querySelector('.social-fixed')
+
+window.addEventListener('scroll', fixSocialFixed)
+
+fixSocialFixed()
+function fixSocialFixed() {
+    if (!socialFixed) return
+
+    const footerPageY = footer.getBoundingClientRect().top
+    
+    if (footerPageY - window.innerHeight < 0) {
+        if (!socialFixed.classList.contains('is-fixed')) {
+            socialFixed.style.position = 'absolute'
+            socialFixed.style.bottom = document.body.scrollHeight - (footerPageY + window.scrollY) + parseInt(window.getComputedStyle(socialFixed).getPropertyValue('bottom')) + 'px'
+            socialFixed.classList.add('is-fixed')
+        }
+    }
+    else {
+        socialFixed.removeAttribute('style')
+        socialFixed.classList.remove('is-fixed')
+    }
 }
 
 // Стрелка "Наверх"

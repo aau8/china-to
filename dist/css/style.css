@@ -571,9 +571,9 @@ h6 {
 }
 
 .c-offer_blue {
-  background: -webkit-gradient(linear, left top, left bottom, from(#2E539A), to(#3A69C4));
-  background: -o-linear-gradient(top, #2E539A 0%, #3A69C4 100%);
-  background: linear-gradient(180deg, #2E539A 0%, #3A69C4 100%);
+  background: -webkit-gradient(linear, right top, left top, from(#2E539A), to(#3A69C4));
+  background: -o-linear-gradient(right, #2E539A 0%, #3A69C4 100%);
+  background: linear-gradient(-90deg, #2E539A 0%, #3A69C4 100%);
 }
 
 .c-offer_orange {
@@ -640,6 +640,7 @@ h6 {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 20px;
+  background: #fff;
   border: 1px solid #E8E8E8;
   border-radius: 10px;
   aspect-ratio: 1;
@@ -1126,6 +1127,7 @@ h6 {
   width: 40%;
   height: 2px;
   background: #212121;
+  border-radius: 10px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -1184,7 +1186,8 @@ h6 {
 }
 
 .header-up__contact {
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .header-up__contact:not(:last-child) {
@@ -1200,6 +1203,14 @@ h6 {
   height: var(--header-down-height);
   background: #fff;
   border-bottom: 1px solid #E8E8E8;
+}
+
+.header-down.is-fixed {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .header-down__container {
@@ -1387,6 +1398,15 @@ h6 {
   gap: 20px;
 }
 
+.s-insur {
+  margin-bottom: 60px;
+}
+
+.s-insur__container {
+  border-bottom: 1px solid #CECECE;
+  padding-bottom: 60px;
+}
+
 .s-insur__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1446,6 +1466,10 @@ h6 {
   color: #F97900;
   vertical-align: middle;
   margin: 0 20px;
+}
+
+.s-amount-packag {
+  margin-top: 60px;
 }
 
 .s-know__body {
@@ -1700,7 +1724,7 @@ h6 {
   }
 
   .header-down__container {
-    padding-left: 0;
+    padding-left: 0 !important;
   }
 
   .header-down__logo {
@@ -1803,6 +1827,10 @@ h6 {
             transform: translate(0, 0);
   }
 
+  .is-fixed .menu {
+    height: calc(100vh - var(--header-down-height));
+  }
+
   .menu__wrap {
     max-width: 400px;
     width: 100%;
@@ -1839,6 +1867,10 @@ h6 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+
+  .header__cabinet {
+    height: 40px;
   }
 
   .header__burger {
@@ -2089,6 +2121,10 @@ h6 {
 
   .s-addit__title {
     font-size: 13px;
+  }
+
+  .menu__wrap {
+    max-width: none;
   }
 
   .footer-up__container {
