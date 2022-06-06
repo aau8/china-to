@@ -70,7 +70,7 @@ const inputDigitElems = document.querySelectorAll('[data-only-digits]')
 for (let i = 0; i < inputDigitElems.length; i++) {
     const input = inputDigitElems[i];
     
-    input.addEventListener('keypress', e => {
+    input.addEventListener('keydown', e => {
         if (e.key.search(/[\d\.]/)) {
             e.preventDefault()
         }
