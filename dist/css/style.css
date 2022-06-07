@@ -1035,7 +1035,7 @@ h6 {
 .modal__window {
   max-width: 400px;
   width: 100%;
-  padding: 0 16px;
+  padding: 0 15px;
 }
 
 .modal-close {
@@ -1960,7 +1960,7 @@ h6 {
 
   .modal-close {
     top: 38px;
-    right: 16px;
+    right: 15px;
   }
 
   .header__socials .socials__title {
@@ -2261,6 +2261,14 @@ h6 {
 
   .s-header__title {
     font-size: 29px;
+  }
+
+  .modal__wrap {
+    padding: 20px 0;
+  }
+
+  .modal-close {
+    top: 18px;
   }
 
   .acc-list {
